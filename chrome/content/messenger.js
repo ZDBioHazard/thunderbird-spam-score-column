@@ -1,12 +1,21 @@
+function getSpamScore ( aHdr ) {
+    var score = parseFloat(aHdr.getStringProperty("x-spam-score"));
+
+    if ( isNaN(score) )
+        return "";
+
+    return score.toFixed(3);
+}
+
 var ColumnHandler = {
     isString: function ( ) { return true; },
 
     getCellText: function ( aRow, aCol ) {
-        return gDBView.getMsgHdrAt(aRow).getStringProperty("x-spam-score");
+        return getSpamScore(gDBView.getMsgHdrAt(aRow));
     },
 
     getSortStringForRow: function ( aHdr ) {
-        return aHdr.getStringProperty("x-spam-score");
+        return getSpamScore(aHdr);
     },
 };
 
