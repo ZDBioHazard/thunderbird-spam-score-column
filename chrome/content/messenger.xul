@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet href="chrome://spam_score_col/skin/messenger.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://spam_score_col/locale/messenger.dtd">
 <overlay id="colSpamScoreOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
     <script src="chrome://spam_score_col/content/messenger.js" />
     <tree id="threadTree">
         <treecols id="threadCols">
             <splitter class="tree-splitter" />
             <treecol id="colSpamScore" persist="hidden ordinal width"
-                     label="Spam Score" tooltiptext="Click to sort by Spam Score" />
+                     label="&spam_score_col.column.label;"
+                     tooltiptext="&spam_score_col.column.tooltip;" />
         </treecols>
     </tree>
 </overlay>
