@@ -8,14 +8,15 @@ function getSpamScore ( aHdr ) {
 }
 
 var ColumnHandler = {
-    isString: function ( ) { return true; },
+    isString: function ( ) { return false; },
 
     getCellText: function ( aRow, aCol ) {
         return getSpamScore(gDBView.getMsgHdrAt(aRow));
     },
 
-    getSortStringForRow: function ( aHdr ) {
-        return getSpamScore(aHdr);
+    getSortLongForRow: function ( aHdr ) {
+        // Good for scores above -1000000.000 (Negative one million.)
+        return (parseFloat(getSpamScore(aHdr)) * 1000) + 10000000000;
     },
 };
 
