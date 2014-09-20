@@ -1,0 +1,4 @@
+content spam_score_col             chrome/content/
+skin    spam_score_col classic/1.0 chrome/skin/
+
+overlay chrome://messenger/content/messenger.xul chrome://spam_score_col/content/messenger.xul
